@@ -14,11 +14,6 @@ const Profile =() => {
         setSubmitted(true);
         event.preventDefault();
         console.log('Form Submitted');
-        return(
-            <div>
-                <h1>Form Submitted</h1>
-            </div>
-        );
     };
 
     const Logout = () => {
