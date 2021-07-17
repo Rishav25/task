@@ -34,14 +34,23 @@ const Login = () => {
     const passwordLength = (e) => {
         
         setPassword(e.target.value);
-        var len = password.length;
-        if(len<7)
+        console.log(e.target.value);
+        
+        //React state does not change the value of the variable immediately
+        //For proper check of length I check the length of e.target.value
+        //So instead of taking length of password
+        //I take length of e.target.value
+        //giving accurate results
+        
+        var len = e.target.value.length;
+        console.log(len);
+        if(len>7)
         {
-            setPasswordLen(false);  //this ensures that the error message is back
+            setPasswordLen(true);
         }
         else
         {
-            setPasswordLen(true);
+            setPasswordLen(false);
         }
     }
 
