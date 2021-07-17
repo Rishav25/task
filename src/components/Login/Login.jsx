@@ -4,6 +4,7 @@ const Login = () => {
     const [username,setUsername] = useState('');
     const [password,setPassword] = useState('');
     const [error,setError] = useState('');
+    const [passwordLen,setPasswordLen] = useState(false);
 
     const loginData = [
         {name : "Person1",
@@ -30,6 +31,22 @@ const Login = () => {
 
     }
 
+    const passwordLength = (e) => {
+        
+        setPassword(e.target.value);
+        var len = password.length;
+        if(len<7)
+        {
+            console.log('Error');
+            console.log(len);
+        }
+        else
+        {
+            setPasswordLen(true);
+            console.log(passwordLen);
+        }
+    }
+
     return (
         <div className="wrapper">
             <div className="form">
@@ -37,8 +54,9 @@ const Login = () => {
                 <form onSubmit={handleSubmit}>
                     <input type="text" value={username} onChange={(e) =>setUsername(e.target.value)}
                     className="input" placeholder="Username" required/>
-                    <input type="password" value={password} onChange={(e) =>setPassword(e.target.value)}
+                    <input type="password" value={password} onChange={passwordLength}
                     className="input" placeholder="Password" required/>
+                    <h2>{passwordLen ? 'Valid Password' : 'Password must be of 8 charecters'}</h2>
                     <div align="center">
                         <button type="submit" className="button">
                             <span>Login</span>
