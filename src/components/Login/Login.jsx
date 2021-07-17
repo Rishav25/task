@@ -54,7 +54,7 @@ const Login = () => {
                     className="input" placeholder="Username" required/>
                     <input type="password" value={password} onChange={passwordLength}
                     className="input" placeholder="Password" required/>
-                    <h2>{passwordLen ? 'Valid Password' : 'Password must be of 8 charecters'}</h2>
+                    <h2>{passwordLen ? 'Valid Password' : 'Password must be of 8 characters'}</h2>
                     <div align="center">
                         <button type="submit" className="button">
                             <span>Login</span>
