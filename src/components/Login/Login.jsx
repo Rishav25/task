@@ -37,13 +37,11 @@ const Login = () => {
         var len = password.length;
         if(len<7)
         {
-            console.log('Error');
-            console.log(len);
+            setPasswordLen(false);  //this ensures that the error message is back
         }
         else
         {
             setPasswordLen(true);
-            console.log(passwordLen);
         }
     }
 
